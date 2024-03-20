@@ -20,7 +20,7 @@ scene.add(luz1);
 
 const loader = new GLTFLoader();
 
-let asteroide =null;
+let trem =null;
 
 loader.load(
 	// resource URL
@@ -30,7 +30,7 @@ loader.load(
 
 		scene.add( gltf.scene );
 		gltf.scene.children[0].scale.set(0.5, 0.5, 0.5);
-		asteroide = gltf.scene.children[0];
+		trem = gltf.scene.children[0];
 
 		gltf.animations; // Array<THREE.AnimationClip>
 		gltf.scene; // THREE.Group
@@ -66,13 +66,13 @@ function animate() {
 	
 	t +=0.5;
 	let angulo = 0.04*t;
-	asteroide.position.z = 1*Math.sin(angulo);
-	asteroide.position.x = 5*Math.cos(angulo);
+	trem.position.z = 1*Math.sin(angulo);
+	trem.position.x = 5*Math.cos(angulo);
 
 
-	if(asteroide){
-		//asteroide.rotation.x +=0.01;
-		asteroide.rotation.y = -angulo;
+	if(trem){
+		//trem.rotation.x +=0.01;
+		trem.rotation.y = -angulo;
 
 	}
 
