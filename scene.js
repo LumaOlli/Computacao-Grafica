@@ -31,12 +31,12 @@ function init() {
   
     function (tremScene) {
       trem = tremScene.scene.children[0];
-      tremScene.scene.children[0].scale.set(0.5, 0.5, 0.5);
+      tremScene.scene.children[0].scale.set(3, 3, 3);
       scene.add(tremScene.scene);
     }
   );
 
-  camera.position.z = 15; // Afastado da cena para melhor visualização
+  camera.position.z = 5; // Afastado da cena para melhor visualização
 
   let t = 0;
 
@@ -44,11 +44,11 @@ function init() {
     requestAnimationFrame(animate);
 
     trem.rotation.z = -(t+Math.PI/2);
-    //trem.rotation.z -= 0.01;
+    //trem.rotation.z- = 0.01;
     //trem.rotation.z = 0.01;
-
+    
     if (trem) {
-      const radius = 10; // Raio do círculo
+      const radius = 3; // Raio do círculo
       const speed = 0.01; // Velocidade de rotação
 
       // Calcula a posição do trem ao longo do círculo

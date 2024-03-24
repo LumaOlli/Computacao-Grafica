@@ -1,11 +1,11 @@
 Model Information:
-* title:	Locomotive
-* source:	https://sketchfab.com/3d-models/locomotive-d89f7d5a37ef43119e7b6c37b41c69cb
-* author:	yanix (https://sketchfab.com/yanix)
+* title:	Trem Em 3D
+* source:	https://sketchfab.com/3d-models/trem-em-3d-275fea7bf3304a94abcb475f15c36d5b
+* author:	Dieguinho570 (https://sketchfab.com/Dieguinho570)
 
 Model License:
 * license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 * requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Locomotive" (https://sketchfab.com/3d-models/locomotive-d89f7d5a37ef43119e7b6c37b41c69cb) by yanix (https://sketchfab.com/yanix) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "Trem Em 3D" (https://sketchfab.com/3d-models/trem-em-3d-275fea7bf3304a94abcb475f15c36d5b) by Dieguinho570 (https://sketchfab.com/Dieguinho570) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
