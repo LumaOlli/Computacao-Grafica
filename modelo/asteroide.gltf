@@ -1,0 +1,129 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5125,
+      "count": 41472,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "count": 7200,
+      "max": [
+        1.14526963419896254948e+00,
+        1.13295158234127812946e+00,
+        1.33146130789952232831e+00
+      ],
+      "min": [
+        -1.88842508215029170060e+00,
+        -1.94032532685102498959e+00,
+        -1.72755525722739022854e+00
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 12,
+      "componentType": 5126,
+      "count": 7200,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 24,
+      "componentType": 5126,
+      "count": 7200,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Wings 3D 2.2.4",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 165888,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 230400,
+      "byteOffset": 165888,
+      "byteStride": 32
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 396288,
+      "uri": "asteroide.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "10464_Asteroid_v1_diffuse.jpg"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.00000000000000000000e+00,
+        0.00000000000000000000e+00,
+        0.00000000000000000000e+00
+      ],
+      "name": "_10464_Asteroid_v1_max201010464_Asteroid_v1",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          5.87999999999999967137e-01,
+          5.87999999999999967137e-01,
+          5.87999999999999967137e-01,
+          1.00000000000000000000e+00
+        ],
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.00000000000000000000e+00,
+        "roughnessFactor": 8.00000000000000044409e-01
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "10464_Asteroid_v1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "10464_Asteroid_v1"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "source": 0
+    }
+  ]
+}
