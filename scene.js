@@ -36,7 +36,7 @@ function init() {
     }
   );
 
-  camera.position.z = 10; // Afastado da cena para melhor visualização
+  camera.position.z = 15; // Afastado da cena para melhor visualização
 
   let t = 0;
 
@@ -48,7 +48,7 @@ function init() {
     //trem.rotation.z = 0.01;
 
     if (trem) {
-      const radius = 5; // Raio do círculo
+      const radius = 10; // Raio do círculo
       const speed = 0.01; // Velocidade de rotação
 
       // Calcula a posição do trem ao longo do círculo
