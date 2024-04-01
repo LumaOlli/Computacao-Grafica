@@ -47,7 +47,7 @@ function init() {
     }
   );
 
-  loader.load(
+  /*loader.load(
     
     "wagon/vagao.gltf", 
     
@@ -56,9 +56,36 @@ function init() {
       vagaoScene.scene.children[0].scale.set(1, 1, 1);
       scene.add(vagaoScene.scene);
     }
-  );
+  );*/
+
+  //piso
+  const geometry = new THREE.PlaneGeometry( 10, 10 );
+  const material = new THREE.MeshBasicMaterial( {color: 0x40b620 , side: THREE.DoubleSide} );
+  const plane = new THREE.Mesh( geometry, material );
+  plane.rotation.x = Math.PI / 2;
+  plane.position.y -= 0.01;
+  scene.add( plane );
+
+  //ceu  prcura outras imagens
+  const geometry1 = new THREE.BoxGeometry( 10, 10, 10 );
+  var cubeMaterials = [ //skybox  faces
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( "img/campo.webp" ), side: THREE.DoubleSide }), //front side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/campo.webp' ), side: THREE.DoubleSide }), //back side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/campo.webp' ), side: THREE.DoubleSide }), //up side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/campo.webp' ), side: THREE.DoubleSide }), //down side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/campo.webp' ), side: THREE.DoubleSide }), //right side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/campo.webp' ), side: THREE.DoubleSide }) //left side
+];
+  //const material1 = new THREE.MeshBasicMaterial( {color: 0x84eae9, side: THREE.DoubleSide} );
+  var cubeMaterial1 = new THREE.MeshFaceMaterial( cubeMaterials );
+  const cube = new THREE.Mesh( geometry1, cubeMaterial1 );
+  //plane.rotation.x = Math.PI / 2;
+  //plane.position.y -= 0.01;
+  cube.position.y += 4.9;
+  scene.add( cube );
 
   camera.position.z = 3; // Afastado da cena para melhor visualização
+  camera.position.y += 1;
 
   let t = 0;
 
