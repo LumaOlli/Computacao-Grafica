@@ -1,0 +1,116 @@
+{
+  "nodes": [
+    {
+      "name": "Cube14_copy16",
+      "mesh": 0
+    }
+  ],
+  "scene": 0,
+  "materials": [
+    {
+      "name": "default",
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.00000000000000000000e+00,
+        0.00000000000000000000e+00,
+        0.00000000000000000000e+00
+      ],
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          7.89853807692307730015e-01,
+          8.13333333333333352577e-01,
+          6.94044444444444463826e-01,
+          1.00000000000000000000e+00
+        ],
+        "metallicFactor": 1.00000000000000005551e-01,
+        "roughnessFactor": 8.00000000000000044409e-01
+      }
+    }
+  ],
+  "accessors": [
+    {
+      "count": 1824,
+      "type": "SCALAR",
+      "byteOffset": 0,
+      "bufferView": 0,
+      "componentType": 5125
+    },
+    {
+      "count": 328,
+      "max": [
+        2.67282605171203613281e-01,
+        2.32109144330024719238e-01,
+        7.68378600478172302246e-02
+      ],
+      "min": [
+        -8.17038491368293762207e-02,
+        1.59753044135868549347e-03,
+        -9.81122776865959167480e-02
+      ],
+      "type": "VEC3",
+      "byteOffset": 0,
+      "bufferView": 1,
+      "componentType": 5126
+    },
+    {
+      "count": 328,
+      "type": "VEC3",
+      "byteOffset": 12,
+      "bufferView": 1,
+      "componentType": 5126
+    },
+    {
+      "count": 328,
+      "type": "VEC4",
+      "byteOffset": 24,
+      "bufferView": 1,
+      "componentType": 5126
+    }
+  ],
+  "asset": {
+    "version": "2.0",
+    "generator": "Wings 3D 2.3"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 7296,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteStride": 40,
+      "byteLength": 13120,
+      "byteOffset": 7296
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "maquina2.bin",
+      "byteLength": 20416
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cube14_copy16",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "COLOR_0": 3
+          },
+          "material": 0,
+          "indices": 0
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

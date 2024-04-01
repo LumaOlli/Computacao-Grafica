@@ -1,0 +1,116 @@
+{
+  "nodes": [
+    {
+      "name": "Cylinder583",
+      "mesh": 0
+    }
+  ],
+  "scene": 0,
+  "materials": [
+    {
+      "name": "default",
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.00000000000000000000e+00,
+        0.00000000000000000000e+00,
+        0.00000000000000000000e+00
+      ],
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          7.89853807692307730015e-01,
+          8.13333333333333352577e-01,
+          6.94044444444444463826e-01,
+          1.00000000000000000000e+00
+        ],
+        "metallicFactor": 1.00000000000000005551e-01,
+        "roughnessFactor": 8.00000000000000044409e-01
+      }
+    }
+  ],
+  "accessors": [
+    {
+      "count": 69996,
+      "type": "SCALAR",
+      "byteOffset": 0,
+      "bufferView": 0,
+      "componentType": 5125
+    },
+    {
+      "count": 14616,
+      "max": [
+        1.03539328338652492079e+00,
+        6.24933047220110893250e-03,
+        1.04939803876091497514e+00
+      ],
+      "min": [
+        -1.04137070415467358764e+00,
+        -6.02062745019793510437e-03,
+        -1.02736592642854196455e+00
+      ],
+      "type": "VEC3",
+      "byteOffset": 0,
+      "bufferView": 1,
+      "componentType": 5126
+    },
+    {
+      "count": 14616,
+      "type": "VEC3",
+      "byteOffset": 12,
+      "bufferView": 1,
+      "componentType": 5126
+    },
+    {
+      "count": 14616,
+      "type": "VEC4",
+      "byteOffset": 24,
+      "bufferView": 1,
+      "componentType": 5126
+    }
+  ],
+  "asset": {
+    "version": "2.0",
+    "generator": "Wings 3D 2.3"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 279984,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteStride": 40,
+      "byteLength": 584640,
+      "byteOffset": 279984
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "trilho.bin",
+      "byteLength": 864624
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cylinder583",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "COLOR_0": 3
+          },
+          "material": 0,
+          "indices": 0
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}
