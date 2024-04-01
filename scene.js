@@ -22,33 +22,55 @@ function init() {
   const luz1 = new THREE.HemisphereLight(0xffffff, 0xff0000, 10);
   scene.add(luz1);
 
-  let trem = new THREE.Object3D();
+  let maquina = new THREE.Object3D();
   const loader = new THREE.GLTFLoader();
 
   loader.load(
-    
-    "locomotive/scene.gltf", 
-  
-    function (tremScene) {
-      trem = tremScene.scene.children[0];
-      tremScene.scene.children[0].scale.set(5, 5, 5);
-      scene.add(tremScene.scene);
+
+    "locomotive/maquina2.gltf",
+
+    function (maquinaScene) {
+      maquina = maquinaScene.scene.children[0];
+      maquinaScene.scene.children[0].scale.set(1, 1, 1);
+      scene.add(maquinaScene.scene);
     }
   );
 
-  camera.position.z = 6; // Afastado da cena para melhor visualização
+  loader.load(
+    
+    "rail/trilho.gltf", 
+    
+    function (trilhoScene) {
+      trilho = trilhoScene.scene.children[0];
+      trilhoScene.scene.children[0].scale.set(1, 1, 1);
+      scene.add(trilhoScene.scene);
+    }
+  );
+
+  loader.load(
+    
+    "wagon/vagao.gltf", 
+    
+    function (vagaoScene) {
+      vagao = vagaoScene.scene.children[0];
+      vagaoScene.scene.children[0].scale.set(1, 1, 1);
+      scene.add(vagaoScene.scene);
+    }
+  );
+
+  camera.position.z = 3; // Afastado da cena para melhor visualização
 
   let t = 0;
 
   function animate() {
     requestAnimationFrame(animate);
 
-    trem.rotation.z = -(t/*+Math.PI/2*/);
+    maquina.rotation.y = -(t - Math.PI/2);
     //trem.rotation.z- = 0.01;
     //trem.rotation.z = 0.01;
     
-    if (trem) {
-      const radius = 5; // Raio do círculo
+    if (maquina) {
+      const radius = 0.95; // Raio do círculo
       const speed = 0.01; // Velocidade de rotação
 
       // Calcula a posição do trem ao longo do círculo
@@ -56,7 +78,7 @@ function init() {
       const z = radius * Math.sin(t);
 
       // Define a posição do trem
-      trem.position.set(x, 0, z);
+      maquina.position.set(x, 0, z);
 
       // Incrementa o ângulo
       t += speed;
@@ -69,7 +91,7 @@ function init() {
 
     renderer.render(scene, camera);
   }
-
+  
   animate();
 }
 
