@@ -19,15 +19,23 @@ function init() {
   var controleMouse = new THREE.OrbitControls(camera, renderer.domElement);
   controleMouse.update();
 
-  const luz1 = new THREE.HemisphereLight(0xffffff, 0xff0000, 10);
-  scene.add(luz1);
+  //luz direcional 
+  const luz1 = new THREE.DirectionalLight( 0xFFFFFF );
+  scene.add( luz1 );
+
+  const ajudante = new THREE.DirectionalLightHelper( luz1, 10 );
+  scene.add( ajudante );
+
+  //luz ambiente
+  const luz2 = new THREE.HemisphereLight(0xffffff, 0xff0000, 10);
+  scene.add(luz2);
 
   let maquina = new THREE.Object3D();
   const loader = new THREE.GLTFLoader();
 
   loader.load(
 
-    "locomotive/maquina2.gltf",
+    "locomotive/maquina.gltf",
 
     function (maquinaScene) {
       maquina = maquinaScene.scene.children[0];
@@ -46,17 +54,6 @@ function init() {
       scene.add(trilhoScene.scene);
     }
   );
-
-  /*loader.load(
-    
-    "wagon/vagao.gltf", 
-    
-    function (vagaoScene) {
-      vagao = vagaoScene.scene.children[0];
-      vagaoScene.scene.children[0].scale.set(1, 1, 1);
-      scene.add(vagaoScene.scene);
-    }
-  );*/
 
   //piso
   const geometry = new THREE.PlaneGeometry( 10, 10 );
