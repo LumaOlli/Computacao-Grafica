@@ -56,12 +56,12 @@ function init() {
   );
 
   //piso
-  const geometry = new THREE.PlaneGeometry( 10, 10 );
+  /*const geometry = new THREE.PlaneGeometry( 10, 10 );
   const material = new THREE.MeshBasicMaterial( {color: 0x40b620 , side: THREE.DoubleSide} );
   const plane = new THREE.Mesh( geometry, material );
   plane.rotation.x = Math.PI / 2;
   plane.position.y -= 0.02;
-  scene.add( plane );
+  scene.add( plane );*/
 
   //ceu  prcura outras imagens
   const geometry1 = new THREE.BoxGeometry( 10, 10, 10 );
@@ -78,7 +78,7 @@ function init() {
   const cube = new THREE.Mesh( geometry1, cubeMaterial1 );
   //plane.rotation.x = Math.PI / 2;
   //plane.position.y -= 0.01;
-  cube.position.y += 4.9;
+  cube.position.y += 4.95;
   scene.add( cube );
 
   camera.position.z = 5; // Afastado da cena para melhor visualização
