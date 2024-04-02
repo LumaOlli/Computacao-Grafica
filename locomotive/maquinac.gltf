@@ -36,16 +36,16 @@
       "componentType": 5125
     },
     {
-      "count": 464,
+      "count": 480,
       "max": [
         4.07708163336880924366e-01,
         2.32109139340223535886e-01,
-        7.68378563403558922928e-02
+        1.01514086717376406099e+00
       ],
       "min": [
         -8.17038479999994127212e-02,
         1.59753045377841740304e-03,
-        -1.47714854673117318429e-01
+        7.90588156160290655983e-01
       ],
       "type": "VEC3",
       "byteOffset": 0,
@@ -53,14 +53,14 @@
       "componentType": 5126
     },
     {
-      "count": 464,
+      "count": 480,
       "type": "VEC3",
       "byteOffset": 12,
       "bufferView": 1,
       "componentType": 5126
     },
     {
-      "count": 464,
+      "count": 480,
       "type": "VEC4",
       "byteOffset": 24,
       "bufferView": 1,
@@ -80,14 +80,14 @@
     {
       "buffer": 0,
       "byteStride": 40,
-      "byteLength": 18560,
+      "byteLength": 19200,
       "byteOffset": 10320
     }
   ],
   "buffers": [
     {
-      "uri": "maquina.bin",
-      "byteLength": 28880
+      "uri": "maquinac.bin",
+      "byteLength": 29520
     }
   ],
   "meshes": [

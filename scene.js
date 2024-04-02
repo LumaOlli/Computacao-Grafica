@@ -35,22 +35,22 @@ function init() {
 
   loader.load(
 
-    "locomotive/maquina.gltf",
+    "locomotive/maquinac.gltf",
 
     function (maquinaScene) {
       maquina = maquinaScene.scene.children[0];
-      maquinaScene.scene.children[0].scale.set(1, 1, 1);
+      maquinaScene.scene.children[0].scale.set(2, 2, 2);
       scene.add(maquinaScene.scene);
     }
   );
 
   loader.load(
     
-    "rail/trilho.gltf", 
+    "rail/trilhoc.gltf", 
     
     function (trilhoScene) {
       trilho = trilhoScene.scene.children[0];
-      trilhoScene.scene.children[0].scale.set(1, 1, 1);
+      trilhoScene.scene.children[0].scale.set(2, 2, 2);
       scene.add(trilhoScene.scene);
     }
   );
@@ -60,7 +60,7 @@ function init() {
   const material = new THREE.MeshBasicMaterial( {color: 0x40b620 , side: THREE.DoubleSide} );
   const plane = new THREE.Mesh( geometry, material );
   plane.rotation.x = Math.PI / 2;
-  plane.position.y -= 0.01;
+  plane.position.y -= 0.02;
   scene.add( plane );
 
   //ceu  prcura outras imagens
@@ -81,8 +81,8 @@ function init() {
   cube.position.y += 4.9;
   scene.add( cube );
 
-  camera.position.z = 3; // Afastado da cena para melhor visualização
-  camera.position.y += 1;
+  camera.position.z = 5; // Afastado da cena para melhor visualização
+  camera.position.y += 2;
 
   let t = 0;
 
@@ -94,7 +94,7 @@ function init() {
     //trem.rotation.z = 0.01;
     
     if (maquina) {
-      const radius = 0.95; // Raio do círculo
+      const radius = 0.0001; // Raio do círculo
       const speed = 0.01; // Velocidade de rotação
 
       // Calcula a posição do trem ao longo do círculo
