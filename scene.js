@@ -66,8 +66,8 @@ function init() {
   //ceu  prcura outras imagens
   const geometry1 = new THREE.BoxGeometry( 10, 10, 10 );
   var cubeMaterials = [ //skybox  faces
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( "img/Imagem_back.jpeg" ), side: THREE.DoubleSide }), //front side
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_front.jpeg' ), side: THREE.DoubleSide }), //back side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( "img/Imagem_back.jpeg" ), side: THREE.DoubleSide }), //back side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_front.jpeg' ), side: THREE.DoubleSide }), //front side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_top.jpeg' ), side: THREE.DoubleSide }), //up side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_bottom.jpeg' ), side: THREE.DoubleSide }), //down side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_right.jpeg' ), side: THREE.DoubleSide }), //right side
