@@ -20,7 +20,7 @@ function init() {
   controleMouse.update();
 
   //luz direcional 
-  const luz1 = new THREE.DirectionalLight( 0xFFFFFF );
+  const luz1 = new THREE.DirectionalLight( 0xffffff );
   scene.add( luz1 );
 
   const ajudante = new THREE.DirectionalLightHelper( luz1, 10 );
@@ -86,6 +86,39 @@ function init() {
 
   let t = 0;
 
+  // Carregando áudio
+  const walk = new THREE.AudioListener();
+  camera.add(walk);
+
+  // Criando som de piui
+  const soundWalk = new THREE.Audio(walk);
+
+  // Carregando arquivo de som
+  const audioLoaderWalk = new THREE.AudioLoader();
+  audioLoaderWalk.load("sounds/piui.mp3", function (buffer) {
+    soundWalk.setBuffer(buffer);
+    soundWalk.setLoop(true);
+    soundWalk.setVolume(0.5);
+  });
+
+  let isSpacePressed = false;
+
+  window.addEventListener("keydown", function (event) {
+    if (event.code === "Space") {
+      isSpacePressed = true;
+      soundWalk.play();
+      console.log("Tecla de espaço pressionada");
+    }
+  });
+
+  window.addEventListener("keyup", function (event) {
+    if (event.code === "Space") {
+      isSpacePressed = false;
+      soundWalk.pause();
+      console.log("Tecla de espaço liberada");
+    }
+  });
+  
   function animate() {
     requestAnimationFrame(animate);
 
