@@ -6,7 +6,7 @@ function init() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
-  //redimensionando conteudo para caber em tela pequena
+  //Redimensionando conteudo para caber em tela pequena
   window.addEventListener("resize", function () {
     var width = window.innerWidth;
     var height = window.innerHeight;
@@ -15,18 +15,18 @@ function init() {
     camera.updateProjectMatrix;
   });
 
-  //movimentação da camera
+  //Movimentação da camera
   var controleMouse = new THREE.OrbitControls(camera, renderer.domElement);
   controleMouse.update();
 
-  //luz direcional 
+  //Luz direcional 
   const luz1 = new THREE.DirectionalLight( 0xffffff );
   scene.add( luz1 );
 
   const ajudante = new THREE.DirectionalLightHelper( luz1, 10 );
   scene.add( ajudante );
 
-  //luz ambiente
+  //Luz ambiente
   const luz2 = new THREE.HemisphereLight(0xffffff, 0xff0000, 10);
   scene.add(luz2);
 
@@ -55,17 +55,9 @@ function init() {
     }
   );
 
-  //piso
-  /*const geometry = new THREE.PlaneGeometry( 10, 10 );
-  const material = new THREE.MeshBasicMaterial( {color: 0x40b620 , side: THREE.DoubleSide} );
-  const plane = new THREE.Mesh( geometry, material );
-  plane.rotation.x = Math.PI / 2;
-  plane.position.y -= 0.02;
-  scene.add( plane );*/
-
-  //ceu  prcura outras imagens
+  //Cria um cubo como parte do cenário(skybox)
   const geometry1 = new THREE.BoxGeometry( 10, 10, 10 );
-  var cubeMaterials = [ //skybox  faces
+  var cubeMaterials = [ 
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( "img/Imagem_back.jpeg" ), side: THREE.DoubleSide }), //back side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_front.jpeg' ), side: THREE.DoubleSide }), //front side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_top.jpeg' ), side: THREE.DoubleSide }), //up side
@@ -73,27 +65,26 @@ function init() {
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_right.jpeg' ), side: THREE.DoubleSide }), //right side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_left.jpeg' ), side: THREE.DoubleSide }) //left side
 ];
-  //const material1 = new THREE.MeshBasicMaterial( {color: 0x84eae9, side: THREE.DoubleSide} );
+
   var cubeMaterial1 = new THREE.MeshFaceMaterial( cubeMaterials );
   const cube = new THREE.Mesh( geometry1, cubeMaterial1 );
-  //plane.rotation.x = Math.PI / 2;
-  //plane.position.y -= 0.01;
   cube.position.y += 4.95;
   scene.add( cube );
 
-  camera.position.z = 5; // Afastado da cena para melhor visualização
+  //Afastado da cena para melhor visualização
+  camera.position.z = 5; 
   camera.position.y += 2;
 
   let t = 0;
 
-  // Carregando áudio
+  //Carregando áudio
   const walk = new THREE.AudioListener();
   camera.add(walk);
 
-  // Criando som de piui
+  //Criando som de piui
   const soundWalk = new THREE.Audio(walk);
 
-  // Carregando arquivo de som
+  //Carregando arquivo de som
   const audioLoaderWalk = new THREE.AudioLoader();
   audioLoaderWalk.load("sounds/piui.mp3", function (buffer) {
     soundWalk.setBuffer(buffer);
@@ -101,8 +92,10 @@ function init() {
     soundWalk.setVolume(0.5);
   });
 
+  //Inicializa o estado da tecla de espaço
   let isSpacePressed = false;
 
+  //Ativa quando a tecla é pressionada
   window.addEventListener("keydown", function (event) {
     if (event.code === "Space") {
       isSpacePressed = true;
@@ -111,6 +104,7 @@ function init() {
     }
   });
 
+  //Ativa quando uma tecla é liberada depois de ser pressionada
   window.addEventListener("keyup", function (event) {
     if (event.code === "Space") {
       isSpacePressed = false;
@@ -123,12 +117,12 @@ function init() {
     requestAnimationFrame(animate);
 
     maquina.rotation.y = -(t - Math.PI/2);
-    //trem.rotation.z- = 0.01;
-    //trem.rotation.z = 0.01;
     
     if (maquina) {
-      const radius = 0.0001; // Raio do círculo
-      const speed = 0.01; // Velocidade de rotação
+      // Raio do círculo
+      const radius = 0.0001; 
+      // Velocidade de rotação
+      const speed = 0.01; 
 
       // Calcula a posição do trem ao longo do círculo
       const x = radius * Math.cos(t);
@@ -152,6 +146,7 @@ function init() {
   animate();
 }
 
+//Inicia a função 'init' após o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", function (event) {
   init();
 });
