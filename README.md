@@ -8,7 +8,7 @@
 
 
 ## :family_man_woman_girl: Equipe
-:man_teacher: Docente: [Marcos Diego Aurelio Mesquita](marcodiegomesquita@gmail.com).<br />
+:man_teacher: Docente: [Marcos Diego Aurelio Mesquita].<br />
 :woman_student: Discente: [Íris Matias da Silva](https://github.com/IrisMatiasdaSilva).<br />
 :woman_student: Discente: [Maria Luma da Silva Oliveira](https://github.com/LumaOlli).<br />
 
