@@ -19,12 +19,18 @@ function init() {
   var controleMouse = new THREE.OrbitControls(camera, renderer.domElement);
   controleMouse.update();
 
-  //Luz direcional 
-  const luz1 = new THREE.DirectionalLight( 0xffffff );
-  scene.add( luz1 );
+  // Luz direcional do tipo sombra
+  const luz1 = new THREE.DirectionalLight(0xffffff, 1);
+  luz1.position.set(0, 1, 0);
+  luz1.castShadow = true;
 
-  const ajudante = new THREE.DirectionalLightHelper( luz1, 10 );
-  scene.add( ajudante );
+  // Configurações de sombra
+  luz1.shadow.mapSize.width = 1024;
+  luz1.shadow.mapSize.height = 1024;
+  luz1.shadow.camera.near = 0.5;
+  luz1.shadow.camera.far = 500;
+
+  scene.add(luz1);
 
   //Luz ambiente
   const luz2 = new THREE.HemisphereLight(0xffffff, 0xff0000, 10);
@@ -112,33 +118,52 @@ function init() {
       console.log("Tecla de espaço liberada");
     }
   });
+
+  let isStopKeyPressed = true; // Inicialmente, o trem está parado
+
+  // Ativa quando uma tecla é pressionada
+  window.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      // Alterna o estado da tecla de parada
+      isStopKeyPressed = !isStopKeyPressed;
+
+      if (isStopKeyPressed) {
+        console.log("Tecla Enter pressionada - Parando o trem");
+      } else {
+        console.log("Tecla Enter pressionada - Retomando movimento do trem");
+      }
+    }
+  });
   
   function animate() {
     requestAnimationFrame(animate);
 
-    maquina.rotation.y = -(t - Math.PI/2);
-    
-    if (maquina) {
-      // Raio do círculo
-      const radius = 0.0001; 
-      // Velocidade de rotação
-      const speed = 0.01; 
 
-      // Calcula a posição do trem ao longo do círculo
-      const x = radius * Math.cos(t);
-      const z = radius * Math.sin(t);
-
-      // Define a posição do trem
-      maquina.position.set(x, 0, z);
-
-      // Incrementa o ângulo
-      t += speed;
-
-      // Mantém o ângulo dentro do intervalo [0, 2 * PI]
-      if (t > 2 * Math.PI) {
-        t -= 2 * Math.PI;
+      maquina.rotation.y = -(t - Math.PI/2);
+      
+      if (maquina) {
+        // Raio do círculo
+        const radius = 0.0001; 
+        // Velocidade de rotação
+        const speed = 0.01; 
+  
+        // Calcula a posição do trem ao longo do círculo
+        const x = radius * Math.cos(t);
+        const z = radius * Math.sin(t);
+  
+        // Define a posição do trem
+        maquina.position.set(x, 0, z);
+  
+        // Incrementa o ângulo
+        if (!isStopKeyPressed) {
+          t += speed;
+        }
+        // Mantém o ângulo dentro do intervalo [0, 2 * PI]
+        if (t > 2 * Math.PI) {
+          t -= 2 * Math.PI;
+        }
       }
-    }
+    
 
     renderer.render(scene, camera);
   }
