@@ -61,7 +61,7 @@ plane.position.y = -0.04;
 
 //Create a helper for the shadow camera (optional)
 const helper = new THREE.CameraHelper( light.shadow.camera );
-scene.add( helper );
+//scene.add( helper );
 
 camera.position.z = 5;
 camera.position.y = 2
@@ -210,7 +210,7 @@ window.addEventListener("keydown", function (event) {
         // Raio do círculo
         const radius = 0.0001; 
         // Velocidade de rotação
-        const speed = 0.01; 
+        const speed = 0.04; 
 
         // Calcula a posição do trem ao longo do círculo
         const x = radius * Math.cos(t);
