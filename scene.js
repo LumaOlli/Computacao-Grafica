@@ -1,4 +1,3 @@
-//import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -20,48 +19,35 @@ var controleMouse = new THREE.OrbitControls(camera, renderer.domElement);
 controleMouse.update();
 
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; // padrão THREE.PCFShadowMap
 document.body.appendChild( renderer.domElement );
 
-//Create a PointLight and turn on shadows for the light
+//Cria um PointLight e ativa sombras para a luz
 const light = new THREE.PointLight( 0xffffff, 4, 100 );
 light.position.set( 5, 5, 7 );
-light.castShadow = true; // default false
+light.castShadow = true; // padrão falso
 scene.add( light );
 
-//Set up shadow properties for the light
-light.shadow.mapSize.width = 1024; // default
-light.shadow.mapSize.height = 1024; // default
-light.shadow.camera.near = 0.5; // default
-light.shadow.camera.far = 500; // default
-
-//fazer assim o SKYBOX!!!
-//Create a sphere that cast shadows (but does not receive them)
-const sphereGeometry = new THREE.SphereGeometry( 5, 32, 32 );
-const sphereMaterial = new THREE.MeshStandardMaterial( { color: 0xff0000 } );
-const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-sphere.castShadow = true; //default is false
-sphere.receiveShadow = false; //default
-//scene.add( sphere );
+//Configura as propriedades de sombra para a luz
+light.shadow.mapSize.width = 1024; // padrão
+light.shadow.mapSize.height = 1024; // padrão
+light.shadow.camera.near = 0.5; // padrão
+light.shadow.camera.far = 500; // padrão
 
 //Luz ambiente
 const luz2 = new THREE.HemisphereLight(0xffffff, 0xff0000, 0.01);
 scene.add(luz2);
 
-//Create a plane that receives shadows (but does not cast them)
+//Cria um plano que recebe sombras, mas não projeta
 const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
-//const planeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
 const planeMaterial = new THREE.MeshStandardMaterial({ map: new THREE.TextureLoader().load( 'img/Imagem_bottom.jpeg' ), side: THREE.DoubleSide }) //down side
 const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 plane.receiveShadow = true;
 scene.add( plane );
 
+//rotação e posição do plano piso
 plane.rotation.x = -Math.PI/2;
 plane.position.y = -0.04;
-
-//Create a helper for the shadow camera (optional)
-const helper = new THREE.CameraHelper( light.shadow.camera );
-//scene.add( helper );
 
 camera.position.z = 5;
 camera.position.y = 2
@@ -109,15 +95,14 @@ loader.load(
   var cubeMaterial1 = new THREE.MeshFaceMaterial( cubeMaterials );
   const cube = new THREE.Mesh( geometry1, cubeMaterial1 );
   cube.position.y += 4.95;
-  //cube.castShadow = true; //default is false
-  cube.receiveShadow = true; //default
+  cube.receiveShadow = true; //padrão
   scene.add( cube );
 
   //Carregando áudio
   const walk = new THREE.AudioListener();
   camera.add(walk);
 
-  //Criando som de piui
+  //Criando som de trem
   const soundWalk = new THREE.Audio(walk);
 
   //Carregando arquivo de som
@@ -203,14 +188,13 @@ window.addEventListener("keydown", function (event) {
   function animate() {
     requestAnimationFrame(animate);
 
-
     maquina.rotation.y = -(t - Math.PI/2);
     
     if (maquina) {
         // Raio do círculo
         const radius = 0.0001; 
         // Velocidade de rotação
-        const speed = 0.04; 
+        const speed = 0.02; 
 
         // Calcula a posição do trem ao longo do círculo
         const x = radius * Math.cos(t);

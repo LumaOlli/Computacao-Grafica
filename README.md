@@ -22,5 +22,3 @@
     * Criação do código;
  *  [Wings3D](https://www.wings3d.com/)
     * Modelagem.
-    
-
